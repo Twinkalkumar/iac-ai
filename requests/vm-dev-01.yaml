@@ -1,0 +1,28 @@
+# Edit only this file. The AI generates the Terraform from it.
+environment: dev
+name: vm-dev-01
+resource_group: rg-dev-centralindia
+region: centralindia
+
+vm:
+  os: ubuntu-22.04
+  size: Standard_D2s_v5      # 2 vCPU, 8 GB RAM
+  disk_gb: 128
+  admin_username: azureuser
+  auth: ssh_key              # never password
+  ssh_public_key_path: ~/.ssh/id_rsa.pub
+
+network:
+  vnet: vnet-dev
+  vnet_address_space: 10.10.0.0/16
+  subnet: snet-app
+  subnet_prefix: 10.10.1.0/24
+  public_ip: true
+
+access:
+  ssh_allowed_from: 104.30.167.32/32
+
+tags:
+  owner: team-a
+  env: dev
+  cost_center: cc-1234

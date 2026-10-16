@@ -1,0 +1,17 @@
+# Terraform state and local files (may contain secrets)
+*.tfstate
+*.tfstate.*
+terraform.tfstate.backup-*
+.terraform/
+.environments/dev/
+.terraform.lock.hcl.bak
+tfplan
+*.tfplan
+crash.log
+*.tfvars
+*.auto.tfvars
+
+# Secrets
+.env
+*.pem
+*.key
